@@ -1,2 +1,184 @@
-# Rani1.html-
-R
+# Rani1.html
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>প্রিয় মানুষের শূন্যতা</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Hind Siliguri', 'Kalpurush', sans-serif; /* Fallback font added */
+            overflow-x: hidden;
+            color: #fff;
+            padding: 15px;
+        }
+
+        /* Background Stars */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            animation: floatUp linear infinite;
+        }
+
+        /* Glass Card */
+        .container {
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 650px;
+            width: 100%;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            text-align: center;
+            /* Container enters immediately */
+            animation: slideIn 1s ease-out; 
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(142, 197, 252, 0.4);
+        }
+
+        p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: 18px;
+            color: #f0f0f0;
+            opacity: 0; /* Initially invisible */
+            transform: translateY(15px);
+            /* Faster animation trigger */
+            animation: textReveal 0.8s ease-out forwards; 
+        }
+
+        /* Faster Delays - যাতে ইউজারকে বেশিক্ষণ অপেক্ষা করতে না হয় */
+        p:nth-child(2) { animation-delay: 0.3s; }
+        p:nth-child(3) { animation-delay: 0.8s; }
+        p:nth-child(4) { animation-delay: 1.3s; }
+        p:nth-child(5) { animation-delay: 1.8s; }
+        p:nth-child(6) { animation-delay: 2.3s; }
+        p:nth-child(7) { animation-delay: 2.8s; }
+        p:nth-child(8) { animation-delay: 3.3s; }
+        p:nth-child(9) { animation-delay: 3.8s; }
+
+        .highlight {
+            color: #ffd700;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .footer-note {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-style: italic;
+            animation: textReveal 1s ease-out forwards;
+            animation-delay: 4.5s;
+            opacity: 0;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            20% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes textReveal {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.6rem; }
+            p { font-size: 1rem; }
+            .container { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars" id="starsContainer"></div>
+
+    <div class="container">
+        <h1>প্রিয় মানুষের শূন্যতা</h1>
+        
+        <p>মানুষের অভাব ছাড়া পৃথিবীর কোনো কিছুর অভাব চিরকাল থাকে না...!</p>
+        
+        <p>ফুল ঝরে গেলে আবার ফুটে, সূর্য ডুবে গেলে আবার ওঠে, সময় ধীরে ধীরে সবকিছু বদলে দেয়।</p>
+        
+        <p>কিন্তু <span class="highlight">প্রিয় মানুষটা</span> একবার হারিয়ে গেলে, তার মতো করে আর কেউ ফিরে আসে না।</p>
+        
+        <p>তার চোখের মায়া, কথার উষ্ণতা, উপস্থিতি নিশ্চয়তা—সব যেন সময়ের ভিড়ে ধীরে ধীরে মিলিয়ে যায়।</p>
+        
+        <p>জীবনের অনেক অভাবই সময় পূরণ করে দেয়, কিন্তু প্রিয় মানুষকে হারানোর শূন্যতা কোনোদিন পূরণ হয় না।</p>
+        
+        <p>চারপাশে যতই হাসি থাকুক, ভেতরে থেকে যায় অদৃশ্য এক ব্যথা, নিঃশব্দে কাঁদতে থাকা একটা মন।</p>
+        
+        <p>সেই অভাবটা চোখে দেখা যায় না, কিন্তু প্রতিটি নিশ্বাসে, প্রতিটি একাকী মুহূর্তে অনুভব করা যায়...!</p>
+        
+        <p>কারণ প্রিয় মানুষ হারানো মানে <span class="highlight">নিজের শান্তি, নিজের পৃথিবীকে চিরতরে হারিয়ে ফেলা...</span></p>
+
+        <div class="footer-note">তোমার অনুভবে...</div>
+    </div>
+
+    <script>
+        const starsContainer = document.getElementById('starsContainer');
+        const starCount = 60;
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            const x = Math.random() * 100;
+            const size = Math.random() * 3 + 1;
+            const duration = Math.random() * 10 + 5;
+            const delay = Math.random() * 5;
+
+            star.style.left = `${x}%`;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.animationDuration = `${duration}s`;
+            star.style.animationDelay = `${delay}s`;
+
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
